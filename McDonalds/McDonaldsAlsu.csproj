@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BAAA7891-ECC7-4424-A28E-9F7042B0DE15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>McDonalds</RootNamespace>
+    <AssemblyName>McDonalds</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="BURGERS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="changeAmount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DESSERTS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DRINKS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BURGERS.xaml.cs">
+      <DependentUpon>BURGERS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="changeAmount.xaml.cs">
+      <DependentUpon>changeAmount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DESSERTS.xaml.cs">
+      <DependentUpon>DESSERTS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DRINKS.xaml.cs">
+      <DependentUpon>DRINKS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="POTATO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="POTATO.xaml.cs">
+      <DependentUpon>POTATO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Burgers\Cheeseburger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Burgers\Burger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Drink.png" />
+    <Resource Include="Pictures\Desserts\Dessert.png" />
+    <Resource Include="Pictures\Salat.png" />
+    <Resource Include="Pictures\Potato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Sousse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Burgers\Chickenburger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Burgers\ChickenPremjer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\potato2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Desserts\Mcflury.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Desserts\Kirsche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Desserts\cheesecake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Desserts\donat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\cola.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\milkCoctail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\Cappucino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\tea.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

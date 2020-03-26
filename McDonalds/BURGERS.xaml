@@ -1,0 +1,45 @@
+﻿<Window x:Class="McDonalds.BURGERS"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:McDonalds"
+        mc:Ignorable="d"
+        Title="BURGERS" Height="450" Width="800">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="150" Margin="25,46,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Burgers/Burger.png" MouseDown="bigtasty_mouseDown"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="25,236,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Burgers/Cheeseburger.png" MouseDown="cheeseburger_mouseDown"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="203,46,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Burgers/Chickenburger.png" MouseDown="chickenburger_mouseDown"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="203,236,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Burgers/ChickenPremjer.png" MouseDown="chickenroyal_mouseDown"/>
+        <Label Content="Биг Тейсти " FontSize="22" HorizontalAlignment="Left" Margin="25,17,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <Label Content="Чикенбургер" FontSize="22" HorizontalAlignment="Left" Margin="203,17,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <Label Content="Чизбургер" FontSize="22" HorizontalAlignment="Left" Margin="25,222,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <Label Content="Чикен Роял" FontSize="22" HorizontalAlignment="Left" Margin="203,222,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <ListView Name="listBurgers" HorizontalAlignment="Left" Height="297" Margin="400,70,0,0" VerticalAlignment="Top" Width="291">
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название " Width="70" />
+                    <GridViewColumn Header="Количество" Width="100" />
+                    <GridViewColumn Header="Цена" Width="115" />
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Label Content="Итого: " FontSize="22" HorizontalAlignment="Left" Margin="400,367,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <Label Content="Корзина " FontSize="22" HorizontalAlignment="Left" Margin="400,17,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <Button Content="Назад" FontSize="21" Background="White" HorizontalAlignment="Left" Margin="672,372,0,0" VerticalAlignment="Top" Width="110" Height="34" MouseDown="backBurger_mouseDown"/>
+        <Label Content="139 руб" FontSize="18" HorizontalAlignment="Left" Margin="203,357,0,0" VerticalAlignment="Top" Width="150" Height="39"/>
+        <Label Content="50 руб" FontSize="18" HorizontalAlignment="Left" Margin="203,167,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <Label Content="50 руб " FontSize="18" HorizontalAlignment="Left" Margin="25,357,0,0" VerticalAlignment="Top" Width="150" Height="39"/>
+        <Label Content="249 руб " FontSize="18" HorizontalAlignment="Left" Margin="25,167,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>

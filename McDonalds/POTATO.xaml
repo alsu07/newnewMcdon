@@ -1,0 +1,29 @@
+﻿<Window x:Class="McDonalds.Potato"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:McDonalds"
+        mc:Ignorable="d"
+        Title="Potato" Height="450" Width="800">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="150" Margin="54,44,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Potato.png"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="54,269,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/potato2.png"/>
+        <ListView HorizontalAlignment="Left" Height="309" Margin="298,58,0,0" VerticalAlignment="Top" Width="292">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название " Width="70" />
+                    <GridViewColumn Header="Количество" Width="100" />
+                    <GridViewColumn Header="Цена" Width="115" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Картошка фри" FontSize="21" HorizontalAlignment="Left" Margin="54,10,0,0" VerticalAlignment="Top" Width="150" Height="42"/>
+        <Label Content="Картошка &#xD;&#xA;по деревенски" FontSize="21" HorizontalAlignment="Left" Margin="54,224,0,0" VerticalAlignment="Top" Width="150" Height="106"/>
+        <Label Content="Корзина" FontSize="21" HorizontalAlignment="Left" Margin="298,11,0,0" VerticalAlignment="Top" Width="150" Height="42"/>
+        <Label Content="Итого: " FontSize="21" HorizontalAlignment="Left" Margin="298,367,0,0" VerticalAlignment="Top" Width="150" Height="42"/>
+        <Button Content="Назад" FontSize="21" Background="White"  HorizontalAlignment="Left" Margin="656,347,0,0" VerticalAlignment="Top" Width="106" Height="44"/>
+
+
+    </Grid>
+</Window>
