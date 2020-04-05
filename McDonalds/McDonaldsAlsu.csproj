@@ -91,6 +91,7 @@
     <Compile Include="DRINKS.xaml.cs">
       <DependentUpon>DRINKS.xaml</DependentUpon>
     </Compile>
+    <Compile Include="list.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

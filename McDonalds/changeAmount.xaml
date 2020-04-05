@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:McDonalds"
         mc:Ignorable="d"
-        Title="changeAmount" Height="289.376" Width="445.609">
+        Title="changeAmount" Height="289.376" Width="445.609" Closing="changeAmountClosing">
     <Grid Margin="0,0,2,0" Height="253" VerticalAlignment="Top">
         <TextBox Name="tbCount"  TextAlignment="Center" FontSize="45" HorizontalAlignment="Left"  Height="81" Margin="147,19,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top"  Width="120"/>
-        <Button Name ="btnPlus"  FontSize="50" Background="White" Content="+" HorizontalAlignment="Left" Margin="14,19,0,0" VerticalAlignment="Top" Width="99" Height="81"  MouseDown="btnPlus_mouseDown"/>
-        <Button Name="btnMinus" FontSize="50" Background="White" Content="-" HorizontalAlignment="Left" Margin="305,19,0,0" VerticalAlignment="Top" Width="99" Height="81" MouseDown="btnMinus_mouseDown"/>
-        <Button Name ="btnOk" FontSize="25" Background="White" Content="Готово" HorizontalAlignment="Left" Margin="129,162,0,0" VerticalAlignment="Top" Width="154" Height="60" MouseDown="btnOk_mouseDown"/>
+        <Button Name ="btnPlus"  FontSize="50" Background="White" Content="+" HorizontalAlignment="Left" Margin="14,19,0,0" VerticalAlignment="Top" Width="99" Height="81"   Click="btnPlus_Click"/>
+        <Button Name="btnMinus" FontSize="50" Background="White" Content="-" HorizontalAlignment="Left" Margin="305,19,0,0" VerticalAlignment="Top" Width="99" Height="81"  Click="btnMinus_click"/>
+        <Button Name ="btnOk" FontSize="25" Background="White" Content="Готово" HorizontalAlignment="Left" Margin="129,162,0,0" VerticalAlignment="Top" Width="154" Height="60"  Click="btnOk_Click"/>
 
     </Grid>
 </Window>

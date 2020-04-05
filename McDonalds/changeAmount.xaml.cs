@@ -20,33 +20,48 @@ namespace McDonalds
     public partial class changeAmount : Window
     {
         public int count;
-        public changeAmount()
+        public string name;
+        public int price;
+
+        public changeAmount(int _price, string _name)
         {
             InitializeComponent();
             count = Convert.ToInt32(tbCount.Text);
+            name = _name;
+            price = _price;
         }
 
         
-        private void btnPlus_mouseDown(object sender, MouseButtonEventArgs e)
+        
+
+        private void changeAmountClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            count++;
-            string res = count.ToString();
-            tbCount.Text = res;
+            
         }
 
-        private void btnMinus_mouseDown(object sender, MouseButtonEventArgs e)
+        private void btnPlus_Click(object sender, RoutedEventArgs e)
+        {
+            count++;
+            tbCount.Text = count.ToString(); ;
+
+        }
+
+        private void btnMinus_click(object sender, RoutedEventArgs e)
         {
             if (count >= 1)
             {
                 count--;
                 tbCount.Text = count.ToString();
             }
-           
         }
 
-        private void btnOk_mouseDown(object sender, MouseButtonEventArgs e)
+        private void btnOk_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            ListBox.newCheque.Add(new ItemsOfList { name = this.name, price = this.price * count, amount = count });
+            ListBox.countOfItems++;
+            this.Close();
+            BURGERS test = new BURGERS();
+            test.Show();
         }
     }
 }

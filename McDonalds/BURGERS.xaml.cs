@@ -17,19 +17,27 @@ namespace McDonalds
     /// <summary>
     /// Логика взаимодействия для BURGERS.xaml
     /// </summary>
+    /// 
+    class MyItem
+    {
+        public int Price;
+        public int Amount;
+        public string Name;
+        public MyItem(string _name, int _amount,int _price)
+        {
+            Name = _name;
+            Amount = _amount;
+            Price = _price;
+        }
+    }
     public partial class BURGERS : Window
     {
 
-        public class MyItem
-        {
-            public int Amount { get; set; }
-
-            public string Name { get; set; }
-            public int Price { get; set; }
-        }
+        
         public BURGERS()
         {
             InitializeComponent();
+
             var gridView = new GridView();
             this.listBurgers.View = gridView;
             gridView.Columns.Add(new GridViewColumn
@@ -47,6 +55,9 @@ namespace McDonalds
                 Header = "Цена",
                 DisplayMemberBinding = new Binding("Price")
             });
+            for(int i= 0; i < ListBox.countOfItems;i++)
+            listBurgers.Items.Add(new MyItem(ListBox.newCheque[i].name, ListBox.newCheque[i].amount, ListBox.newCheque[i].price ));
+            
         }
 
         private void backBurger_mouseDown(object sender, MouseButtonEventArgs e)
@@ -58,44 +69,42 @@ namespace McDonalds
 
         private void bigtasty_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(249, "Биг Тейсти");
             change.Show();
-          this.IsEnabled = false;
-           while (change.IsActive) ;
-            this.IsEnabled = true;
-                
-            listBurgers.Items.Add(new MyItem { Name = "Биг Тейсти", Amount = change.count, Price = change.count * 249 });
-            
-        }
 
+            // listBurgers.Items.Add(new MyItem { Name = "Биг Тейсти", Amount = change.count, Price = change.count * 249 });
+            this.Close();
+        }
+        
         private void chickenburger_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(249, "Биг Тейсти");
             change.Show();
             this.IsEnabled = false;
             while (change.IsActive) ;
             this.IsEnabled = true;
-            listBurgers.Items.Add(new MyItem { Name = "Чикенбургер", Amount = change.count, Price = change.count * 50 });
+           // listBurgers.Items.Add(new MyItem { Name = "Чикенбургер", Amount = change.count, Price = change.count * 50 });
         }
 
         private void cheeseburger_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(249, "Биг Тейсти");
             change.Show();
             this.IsEnabled = false;
             while (change.IsActive) ;
             this.IsEnabled = true;
-            listBurgers.Items.Add(new MyItem { Name = "Чизбургер", Amount = change.count, Price = change.count * 50 });
+           // listBurgers.Items.Add(new MyItem { Name = "Чизбургер", Amount = change.count, Price = change.count * 50 });
         }
 
         private void chickenroyal_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(249, "Биг Тейсти");
             change.Show();
             this.IsEnabled = false;
             while (change.IsActive) ;
             this.IsEnabled = true;
-            listBurgers.Items.Add(new MyItem { Name = "Чикен Роял", Amount = change.count, Price = change.count * 139 });
+           // listBurgers.Items.Add(new MyItem { Name = "Чикен Роял", Amount = change.count, Price = change.count * 139 });
         }
+        
     }
 }
