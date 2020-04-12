@@ -15,6 +15,26 @@ using System.Windows.Shapes;
 
 namespace McDonalds
 {
+    public class Item
+    {
+        public int Amount { get; set; }
+        public string Name { get; set; }
+        public int Price { get; set; }
+    }
+    public static class MyItem
+    {
+        public static GridView gridView = new GridView();
+        public static List<Item> list = new List<Item>();
+        public enum Items
+        {
+            BigTaste
+        }
+        public static void Add(string name, int amount, int price)
+        {
+            list.Add(new Item { Name = name, Amount = amount, Price = price });
+        }
+
+    }
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
@@ -29,7 +49,7 @@ namespace McDonalds
         {
             BURGERS burgers = new BURGERS();
             burgers.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -19,83 +19,59 @@ namespace McDonalds
     /// </summary>
     public partial class BURGERS : Window
     {
-
-        public class MyItem
-        {
-            public int Amount { get; set; }
-
-            public string Name { get; set; }
-            public int Price { get; set; }
-        }
         public BURGERS()
         {
             InitializeComponent();
-            var gridView = new GridView();
-            this.listBurgers.View = gridView;
-            gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Имя",
-                DisplayMemberBinding = new Binding("Name")
-            });
-            gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Количество",
-                DisplayMemberBinding = new Binding("Amount")
-            });
-            gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Цена",
-                DisplayMemberBinding = new Binding("Price")
-            });
+            Refresh();
         }
-
+        void Refresh()
+        {
+            listBurgers.Items.Clear();
+            foreach (Item item in MyItem.list)
+                listBurgers.Items.Add(item);
+        }
         private void backBurger_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.Hide();
             MainWindow mainw = new MainWindow();
             mainw.Show();
+            this.Close();
         }
 
         private void bigtasty_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(MyItem.Items.BigTaste);
             change.Show();
-          this.IsEnabled = false;
-           while (change.IsActive) ;
-            this.IsEnabled = true;
-                
-            listBurgers.Items.Add(new MyItem { Name = "Биг Тейсти", Amount = change.count, Price = change.count * 249 });
-            
+            Refresh();
         }
-
+       
         private void chickenburger_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(MyItem.Items.BigTaste);
             change.Show();
             this.IsEnabled = false;
             while (change.IsActive) ;
             this.IsEnabled = true;
-            listBurgers.Items.Add(new MyItem { Name = "Чикенбургер", Amount = change.count, Price = change.count * 50 });
+            //listBurgers.Items.Add(new MyItem { Name = "Чикенбургер", Amount = change.count, Price = change.count * 50 });
         }
 
         private void cheeseburger_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(MyItem.Items.BigTaste);
             change.Show();
             this.IsEnabled = false;
             while (change.IsActive) ;
             this.IsEnabled = true;
-            listBurgers.Items.Add(new MyItem { Name = "Чизбургер", Amount = change.count, Price = change.count * 50 });
+            //listBurgers.Items.Add(new MyItem { Name = "Чизбургер", Amount = change.count, Price = change.count * 50 });
         }
 
         private void chickenroyal_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(MyItem.Items.BigTaste);
             change.Show();
             this.IsEnabled = false;
             while (change.IsActive) ;
             this.IsEnabled = true;
-            listBurgers.Items.Add(new MyItem { Name = "Чикен Роял", Amount = change.count, Price = change.count * 139 });
+            //listBurgers.Items.Add(new MyItem { Name = "Чикен Роял", Amount = change.count, Price = change.count * 139 });
         }
     }
 }

@@ -19,14 +19,14 @@
 
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Название " Width="70" />
-                    <GridViewColumn Header="Количество" Width="100" />
-                    <GridViewColumn Header="Цена" Width="115" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Название " Width="70" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Header="Количество" Width="100" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Цена" Width="115" />
                 </GridView>
             </ListView.View>
 
         </ListView>
-        <Label Content="Итого: " FontSize="22" HorizontalAlignment="Left" Margin="400,367,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <Label Content="Итого: " FontSize="22" HorizontalAlignment="Left" Margin="400,367,0,0" VerticalAlignment="Top" Width="150" Height="48" />
         <Label Content="Корзина " FontSize="22" HorizontalAlignment="Left" Margin="400,17,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
         <Button Content="Назад" FontSize="21" Background="White" HorizontalAlignment="Left" Margin="672,372,0,0" VerticalAlignment="Top" Width="110" Height="34" MouseDown="backBurger_mouseDown"/>
         <Label Content="139 руб" FontSize="18" HorizontalAlignment="Left" Margin="203,357,0,0" VerticalAlignment="Top" Width="150" Height="39"/>
