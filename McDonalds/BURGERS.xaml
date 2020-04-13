@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:McDonalds"
         mc:Ignorable="d"
-        Title="BURGERS" Height="450" Width="800">
+        Title="BURGERS" Height="450" Width="800" MouseEnter="Window_MouseEnter">
     <Grid>
         <Image HorizontalAlignment="Left" Height="150" Margin="25,46,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Burgers/Burger.png" MouseDown="bigtasty_mouseDown"/>
         <Image HorizontalAlignment="Left" Height="150" Margin="25,236,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Burgers/Cheeseburger.png" MouseDown="cheeseburger_mouseDown"/>
@@ -28,7 +28,7 @@
         </ListView>
         <Label Content="Итого: " FontSize="22" HorizontalAlignment="Left" Margin="400,367,0,0" VerticalAlignment="Top" Width="150" Height="48" />
         <Label Content="Корзина " FontSize="22" HorizontalAlignment="Left" Margin="400,17,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
-        <Button Content="Назад" FontSize="21" Background="White" HorizontalAlignment="Left" Margin="672,372,0,0" VerticalAlignment="Top" Width="110" Height="34" MouseDown="backBurger_mouseDown"/>
+        <Button Content="Назад" FontSize="21" Background="White" HorizontalAlignment="Left" Margin="672,372,0,0" VerticalAlignment="Top" Width="110" Height="34" Click="backBurger_mouseDown"/>
         <Label Content="139 руб" FontSize="18" HorizontalAlignment="Left" Margin="203,357,0,0" VerticalAlignment="Top" Width="150" Height="39"/>
         <Label Content="50 руб" FontSize="18" HorizontalAlignment="Left" Margin="203,167,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
         <Label Content="50 руб " FontSize="18" HorizontalAlignment="Left" Margin="25,357,0,0" VerticalAlignment="Top" Width="150" Height="39"/>

@@ -5,28 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:McDonalds"
         mc:Ignorable="d"
-        Title="DESSERTS" Height="450" Width="800">
+        Title="DESSERTS" Height="450" Width="800" MouseEnter="Window_MouseEnter">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="120" Margin="45,41,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Desserts/Mcflury.png"/>
-        <Image HorizontalAlignment="Left" Height="120" Margin="45,268,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Desserts/Kirsche.png"/>
-        <Image HorizontalAlignment="Left" Height="120" Margin="235,41,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Desserts/cheesecake.png"/>
-        <Image HorizontalAlignment="Left" Height="120" Margin="235,268,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Desserts/donat.png"/>
+        <Image Name ="makFlury" HorizontalAlignment="Left" Height="120" Margin="45,41,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Desserts/Mcflury.png" MouseDown="makFlury_MouseDown"/>
+        <Image Name ="cherryCake" HorizontalAlignment="Left" Height="120" Margin="45,268,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Desserts/Kirsche.png" MouseDown="cherryCake_MouseDown"/>
+        <Image Name ="chizCake" HorizontalAlignment="Left" Height="120" Margin="235,41,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Desserts/cheesecake.png" MouseDown="chizCake_MouseDown"/>
+        <Image Name ="donut" HorizontalAlignment="Left" Height="120" Margin="235,268,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Desserts/donat.png" MouseDown="donut_MouseDown"/>
         <Label Content="Макфлури" FontSize="22" HorizontalAlignment="Left" Margin="45,10,0,0" VerticalAlignment="Top" Width="120" Height="38"/>
         <Label Content="Чизкейк" FontSize="22" HorizontalAlignment="Left" Margin="235,3,0,0" VerticalAlignment="Top" Width="120" Height="38"/>
         <Label Content="Пирожок &#xD;&#xA;с вишней" FontSize="22" HorizontalAlignment="Left" Margin="45,214,0,0" VerticalAlignment="Top" Width="120" Height="83"/>
         <Label Content="Донат" FontSize="22" HorizontalAlignment="Left" Margin="260,225,0,0" VerticalAlignment="Top" Width="120" Height="38"/>
-        <ListView HorizontalAlignment="Left" Height="290" Margin="427,60,0,0" VerticalAlignment="Top" Width="273">
+        <ListView Name ="listDesert" HorizontalAlignment="Left" Height="290" Margin="427,60,0,0" VerticalAlignment="Top" Width="273">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Название " Width="70" />
-                    <GridViewColumn Header="Количество" Width="100" />
-                    <GridViewColumn Header="Цена" Width="115" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Название " Width="70" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Header="Количество" Width="100" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Цена" Width="115" />
                 </GridView>
             </ListView.View>
         </ListView>
         <Label Content="Корзина" FontSize="22" HorizontalAlignment="Left" Margin="427,10,0,0" VerticalAlignment="Top" Width="120" Height="38"/>
         <Label Content="Итого: " FontSize="22" HorizontalAlignment="Left" Margin="427,355,0,0" VerticalAlignment="Top" Width="120" Height="38"/>
-        <Button Content="Назад" Background="White" FontSize="20" HorizontalAlignment="Left" Margin="668,364,0,0" VerticalAlignment="Top" Width="114" Height="38"/>
+        <Button Content="Назад" Background="White" FontSize="20" HorizontalAlignment="Left" Margin="668,364,0,0" VerticalAlignment="Top" Width="114" Height="38" Click="Button_Click"/>
 
 
 

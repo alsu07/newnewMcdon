@@ -22,6 +22,52 @@ namespace McDonalds
         public DESSERTS()
         {
             InitializeComponent();
+            Refresh();
+        }
+        void Refresh()
+        {
+            listDesert.Items.Clear();
+            foreach (Item item in MyItem.list)
+                listDesert.Items.Add(item);
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainw = new MainWindow();
+            mainw.Show();
+            this.Close();
+        }
+
+        private void Window_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void makFlury_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            changeAmount change = new changeAmount(MyItem.Items.MacFlury);
+            change.Show();
+            Refresh();
+        }
+
+        private void chizCake_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            changeAmount change = new changeAmount(MyItem.Items.ChizCake);
+            change.Show();
+            Refresh();
+        }
+
+        private void cherryCake_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            changeAmount change = new changeAmount(MyItem.Items.CherryCake);
+            change.Show();
+            Refresh();
+        }
+
+        private void donut_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            changeAmount change = new changeAmount(MyItem.Items.Donut);
+            change.Show();
+            Refresh();
         }
     }
 }

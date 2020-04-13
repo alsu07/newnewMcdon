@@ -5,24 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:McDonalds"
         mc:Ignorable="d"
-        Title="Potato" Height="450" Width="800">
+        Title="Potato" Height="450" Width="800" MouseEnter="Window_MouseEnter">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="150" Margin="54,44,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Potato.png"/>
-        <Image HorizontalAlignment="Left" Height="150" Margin="54,269,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/potato2.png"/>
-        <ListView HorizontalAlignment="Left" Height="309" Margin="298,58,0,0" VerticalAlignment="Top" Width="292">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Left" Height="150" Margin="54,44,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Potato.png" MouseDown ="fri_MouseDown"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="54,269,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/potato2.png" MouseDown ="village_MouseDown"/>
+        <ListView Name ="listPotato" HorizontalAlignment="Left" Height="309" Margin="298,58,0,0" VerticalAlignment="Top" Width="292">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Название " Width="70" />
-                    <GridViewColumn Header="Количество" Width="100" />
-                    <GridViewColumn Header="Цена" Width="115" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Название " Width="70" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Header="Количество" Width="100" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Цена" Width="115" />
                 </GridView>
             </ListView.View>
         </ListView>
         <Label Content="Картошка фри" FontSize="21" HorizontalAlignment="Left" Margin="54,10,0,0" VerticalAlignment="Top" Width="150" Height="42"/>
-        <Label Content="Картошка &#xD;&#xA;по деревенски" FontSize="21" HorizontalAlignment="Left" Margin="54,224,0,0" VerticalAlignment="Top" Width="150" Height="106"/>
+        <Label Content="Картошка &#xD;&#xA;по деревенски" FontSize="21" HorizontalAlignment="Left" Margin="54,223,0,0" VerticalAlignment="Top" Width="150" Height="62"/>
         <Label Content="Корзина" FontSize="21" HorizontalAlignment="Left" Margin="298,11,0,0" VerticalAlignment="Top" Width="150" Height="42"/>
         <Label Content="Итого: " FontSize="21" HorizontalAlignment="Left" Margin="298,367,0,0" VerticalAlignment="Top" Width="150" Height="42"/>
-        <Button Content="Назад" FontSize="21" Background="White"  HorizontalAlignment="Left" Margin="656,347,0,0" VerticalAlignment="Top" Width="106" Height="44"/>
+        <Button Content="Назад" FontSize="21" Background="White"  HorizontalAlignment="Left" Margin="656,347,0,0" VerticalAlignment="Top" Width="106" Height="44" Click="Button_Click"/>
+        <Label Content="64 руб" FontSize="18" HorizontalAlignment="Left" Margin="54,176,0,0" VerticalAlignment="Top" Width="64" Height="30"/>
+        <Label Content="77 руб" FontSize="18" HorizontalAlignment="Left" Margin="170,379,0,0" VerticalAlignment="Top" Width="64" Height="30"/>
 
 
     </Grid>

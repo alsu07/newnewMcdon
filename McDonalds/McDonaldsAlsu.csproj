@@ -101,6 +101,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyItem.cs" />
     <Compile Include="POTATO.xaml.cs">
       <DependentUpon>POTATO.xaml</DependentUpon>
     </Compile>
