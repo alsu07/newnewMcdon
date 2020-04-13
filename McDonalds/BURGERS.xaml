@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:McDonalds"
         mc:Ignorable="d"
-        Title="BURGERS" Height="450" Width="800">
+        Title="BURGERS" Height="450" Width="800" MouseEnter="Window_MouseEnter">
     <Grid>
         <Image HorizontalAlignment="Left" Height="150" Margin="25,46,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Burgers/Burger.png" MouseDown="bigtasty_mouseDown"/>
         <Image HorizontalAlignment="Left" Height="150" Margin="25,236,0,0" VerticalAlignment="Top" Width="150" Source="Pictures/Burgers/Cheeseburger.png" MouseDown="cheeseburger_mouseDown"/>
@@ -15,20 +15,21 @@
         <Label Content="Чикенбургер" FontSize="22" HorizontalAlignment="Left" Margin="203,17,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
         <Label Content="Чизбургер" FontSize="22" HorizontalAlignment="Left" Margin="25,222,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
         <Label Content="Чикен Роял" FontSize="22" HorizontalAlignment="Left" Margin="203,222,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <Label Name ="totalPrice" FontSize="24" Content="0" HorizontalAlignment="Left" Margin="513,367,0,0" VerticalAlignment="Top" Height="45" Width="90"/>
         <ListView Name="listBurgers" HorizontalAlignment="Left" Height="297" Margin="400,70,0,0" VerticalAlignment="Top" Width="291">
 
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Название " Width="70" />
-                    <GridViewColumn Header="Количество" Width="100" />
-                    <GridViewColumn Header="Цена" Width="115" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Название " Width="70" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Header="Количество" Width="100" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Цена" Width="115" />
                 </GridView>
             </ListView.View>
 
         </ListView>
-        <Label Content="Итого: " FontSize="22" HorizontalAlignment="Left" Margin="400,367,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <Label Content="Итого: " FontSize="22" HorizontalAlignment="Left" Margin="400,367,0,0" VerticalAlignment="Top" Width="150" Height="48" />
         <Label Content="Корзина " FontSize="22" HorizontalAlignment="Left" Margin="400,17,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
-        <Button Content="Назад" FontSize="21" Background="White" HorizontalAlignment="Left" Margin="672,372,0,0" VerticalAlignment="Top" Width="110" Height="34" MouseDown="backBurger_mouseDown"/>
+        <Button Content="Назад" FontSize="21" Background="White" HorizontalAlignment="Left" Margin="672,372,0,0" VerticalAlignment="Top" Width="110" Height="34" Click="backBurger_mouseDown"/>
         <Label Content="139 руб" FontSize="18" HorizontalAlignment="Left" Margin="203,357,0,0" VerticalAlignment="Top" Width="150" Height="39"/>
         <Label Content="50 руб" FontSize="18" HorizontalAlignment="Left" Margin="203,167,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
         <Label Content="50 руб " FontSize="18" HorizontalAlignment="Left" Margin="25,357,0,0" VerticalAlignment="Top" Width="150" Height="39"/>

@@ -5,36 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:McDonalds"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" >
-    <Grid>
-        <Image Name="burgerMain" HorizontalAlignment="Left" Height="120" Margin="28,58,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Burgers/Burger.png" MouseDown="burger_mouseDown"  />
-        <Image Name="potatoMain"  HorizontalAlignment="Left" Height="120" Margin="196,58,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Potato.png" />
-        <Image Name="dessertMain" HorizontalAlignment="Left" Height="120" Margin="28,255,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Desserts/Dessert.png" />
-        <Image Name="drinkMain" HorizontalAlignment="Left" Height="120" Margin="196,255,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Drink.png" />
+        Title="MainWindow" Height="450" Width="800" MouseEnter="Window_MouseEnter" >
+    <Grid Margin="0,0,-0.4,0" Height="420" VerticalAlignment="Top" HorizontalAlignment="Left" Width="794">
+        <Image Name="burgerMain" HorizontalAlignment="Right" Height="120" Margin="0,0,646,242" VerticalAlignment="Bottom" Width="120" Source="Pictures/Burgers/Burger.png" MouseDown="burger_mouseDown"  />
+        <Image Name="potatoMain"  HorizontalAlignment="Left" Height="120" Margin="196,58,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Potato.png" MouseDown="potato_MouseDown"/>
+        <Image Name="dessertMain" HorizontalAlignment="Left" Height="120" Margin="28,255,0,0" VerticalAlignment="Top" Width="120" Source="Pictures/Desserts/Dessert.png" MouseDown="dessert_MouseDown"/>
+        <Image Name="drinkMain" Margin="196,255,0,0" Source="Pictures/Drink.png" MouseDown="drink_MouseDown" Height="120" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
         <Label Name ="Burger" Content= "Бургеры" FontSize="22" HorizontalAlignment="Left" Margin="28,12,0,0" VerticalAlignment="Top" Width="120" Height="41" />
         <Label Name ="Drink" Content= "Напитки" FontSize="22" HorizontalAlignment="Left" Margin="196,208,0,0" VerticalAlignment="Top" Width="120" Height="41" />
         <Label Name="Desserts" Content= "Десерты" FontSize="22" HorizontalAlignment="Left" Margin="28,208,0,0" VerticalAlignment="Top" Width="120" Height="41" />
         <Label Name="Potato" Content= "Картошка" FontSize="22" HorizontalAlignment="Left" Margin="196,12,0,0" VerticalAlignment="Top" Width="120" Height="41" />
         <Label Content="Корзина:" FontSize="22" HorizontalAlignment="Left" Margin="377,12,0,0" VerticalAlignment="Top" Height="39" Width="169"/>
-        <ListView HorizontalAlignment="Left" Height="281" Margin="377,67,0,0" VerticalAlignment="Top" Width="280" >
+        <ListView Name ="listMain" Margin="377,67,0,0" Height="281" VerticalAlignment="Top" HorizontalAlignment="Left" Width="280" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Название " Width="70" />
-                    <GridViewColumn Header="Количество" Width="100" />
-                    <GridViewColumn Header="Цена" Width="115" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Название " Width="70" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Amount}" Header="Количество" Width="100" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}" Header="Цена" Width="115" />
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Итого: " FontSize="24" HorizontalAlignment="Left" Margin="377,353,0,0" VerticalAlignment="Top" Width="169" Height="48"/>
-        <Button Background="White" FontSize="15" Content="Редактировать" HorizontalAlignment="Left" Margin="672,308,0,0" VerticalAlignment="Top" Width="110" Height="40"/>
-        <Button Background="White" FontSize="15" Content="Удалить" HorizontalAlignment="Left" Margin="672,361,0,0" VerticalAlignment="Top" Width="110" Height="37"/>
-
-
-
-
-
-
-
-
+        <Label Content="Итого: " FontSize="24" HorizontalAlignment="Left" Margin="377,353,0,0" VerticalAlignment="Top" Width="85" Height="48"/>
+        <Button Name ="btnEdit" Background="White" FontSize="15" Content="Редактировать" HorizontalAlignment="Left" Margin="672,308,0,0" VerticalAlignment="Top" Width="110" Height="40" Click="btnEdit_Click"/>
+        <Button Name ="btnDelete" Background="White" FontSize="15" Content="Удалить" Margin="672,361,0,0" Click="btnDelete_Click" HorizontalAlignment="Left" Width="110" Height="37" VerticalAlignment="Top"/>
+        <Label Name ="totalPrice" FontSize="24" Content="0" HorizontalAlignment="Left" Margin="496,353,0,0" VerticalAlignment="Top" Height="45" Width="90"/>
     </Grid>
 </Window>

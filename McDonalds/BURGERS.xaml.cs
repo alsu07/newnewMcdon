@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace McDonalds
 {
@@ -19,83 +8,56 @@ namespace McDonalds
     /// </summary>
     public partial class BURGERS : Window
     {
-
-        public class MyItem
-        {
-            public int Amount { get; set; }
-
-            public string Name { get; set; }
-            public int Price { get; set; }
-        }
         public BURGERS()
         {
             InitializeComponent();
-            var gridView = new GridView();
-            this.listBurgers.View = gridView;
-            gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Имя",
-                DisplayMemberBinding = new Binding("Name")
-            });
-            gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Количество",
-                DisplayMemberBinding = new Binding("Amount")
-            });
-            gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Цена",
-                DisplayMemberBinding = new Binding("Price")
-            });
+            Refresh();
         }
-
-        private void backBurger_mouseDown(object sender, MouseButtonEventArgs e)
+        void Refresh()
         {
-            this.Hide();
+            listBurgers.Items.Clear();
+            foreach (Item item in MyItem.list)
+                listBurgers.Items.Add(item);
+            totalPrice.Content = MyItem.TotalPrice.ToString();
+        }
+        private void backBurger_mouseDown(object sender, RoutedEventArgs e)
+        {
             MainWindow mainw = new MainWindow();
             mainw.Show();
+            this.Close();
         }
 
         private void bigtasty_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(MyItem.Items.BigTasty);
             change.Show();
-          this.IsEnabled = false;
-           while (change.IsActive) ;
-            this.IsEnabled = true;
-                
-            listBurgers.Items.Add(new MyItem { Name = "Биг Тейсти", Amount = change.count, Price = change.count * 249 });
-            
+            Refresh();
         }
-
+       
         private void chickenburger_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(MyItem.Items.ChickenBurger);
             change.Show();
-            this.IsEnabled = false;
-            while (change.IsActive) ;
-            this.IsEnabled = true;
-            listBurgers.Items.Add(new MyItem { Name = "Чикенбургер", Amount = change.count, Price = change.count * 50 });
+            Refresh();
         }
 
         private void cheeseburger_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(MyItem.Items.ChickenRoyal);
             change.Show();
-            this.IsEnabled = false;
-            while (change.IsActive) ;
-            this.IsEnabled = true;
-            listBurgers.Items.Add(new MyItem { Name = "Чизбургер", Amount = change.count, Price = change.count * 50 });
+            Refresh();
         }
 
         private void chickenroyal_mouseDown(object sender, MouseButtonEventArgs e)
         {
-            changeAmount change = new changeAmount();
+            changeAmount change = new changeAmount(MyItem.Items.ChizBurger);
             change.Show();
-            this.IsEnabled = false;
-            while (change.IsActive) ;
-            this.IsEnabled = true;
-            listBurgers.Items.Add(new MyItem { Name = "Чикен Роял", Amount = change.count, Price = change.count * 139 });
+            Refresh();
+        }
+
+        private void Window_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Refresh();
         }
     }
 }

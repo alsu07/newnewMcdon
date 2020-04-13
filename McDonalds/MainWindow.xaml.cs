@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace McDonalds
 {
@@ -23,13 +11,60 @@ namespace McDonalds
         public MainWindow()
         {
             InitializeComponent();
+            Refresh();
         }
-
+        void Refresh()
+        {
+            listMain.Items.Clear();
+            foreach (Item item in MyItem.list)
+                listMain.Items.Add(item);
+            totalPrice.Content = MyItem.TotalPrice.ToString();
+        }
         private void burger_mouseDown(object sender, MouseButtonEventArgs e)
         {
             BURGERS burgers = new BURGERS();
             burgers.Show();
-            this.Hide();
+            this.Close();
+        }
+
+        private void potato_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Potato potato = new Potato();
+            potato.Show();
+            this.Close();
+        }
+
+        private void dessert_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DESSERTS desserts = new DESSERTS();
+            desserts.Show();
+            this.Close();
+        }
+
+        private void drink_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DRINKS drinks = new DRINKS();
+            drinks.Show();
+            this.Close();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MyItem.Delete(listMain.Items.IndexOf(listMain.SelectedItem));
+            Refresh();
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var i = listMain.Items.IndexOf(listMain.SelectedItem);
+            changeAmount change = new changeAmount(i, 2);
+            change.Show();
+            Refresh();
+        }
+
+        private void Window_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Refresh();
         }
     }
 }
