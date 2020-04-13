@@ -18,6 +18,7 @@ namespace McDonalds
             listMain.Items.Clear();
             foreach (Item item in MyItem.list)
                 listMain.Items.Add(item);
+            totalPrice.Content = MyItem.TotalPrice.ToString();
         }
         private void burger_mouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -55,8 +56,14 @@ namespace McDonalds
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            changeAmount change = new changeAmount(listMain.Items.IndexOf(listMain.SelectedItem), 2);
+            var i = listMain.Items.IndexOf(listMain.SelectedItem);
+            changeAmount change = new changeAmount(i, 2);
             change.Show();
+            Refresh();
+        }
+
+        private void Window_MouseEnter(object sender, MouseEventArgs e)
+        {
             Refresh();
         }
     }

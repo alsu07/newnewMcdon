@@ -18,6 +18,7 @@ namespace McDonalds
             listPotato.Items.Clear();
             foreach (Item item in MyItem.list)
                 listPotato.Items.Add(item);
+            totalPrice.Content = MyItem.TotalPrice.ToString();
         }
 
         private void fri_MouseDown(object sender, MouseButtonEventArgs e)

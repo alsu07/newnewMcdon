@@ -15,6 +15,11 @@
         <Label Content="Чизкейк" FontSize="22" HorizontalAlignment="Left" Margin="235,3,0,0" VerticalAlignment="Top" Width="120" Height="38"/>
         <Label Content="Пирожок &#xD;&#xA;с вишней" FontSize="22" HorizontalAlignment="Left" Margin="45,214,0,0" VerticalAlignment="Top" Width="120" Height="83"/>
         <Label Content="Донат" FontSize="22" HorizontalAlignment="Left" Margin="260,225,0,0" VerticalAlignment="Top" Width="120" Height="38"/>
+        <Label Content="100 руб" FontSize="18" HorizontalAlignment="Left" Margin="54,176,0,0" VerticalAlignment="Top" Width="79" Height="33"/>
+        <Label Content="89 руб" FontSize="18" HorizontalAlignment="Left" Margin="260,369,0,0" VerticalAlignment="Top" Width="64" Height="33"/>
+        <Label Content="50 руб" FontSize="18" HorizontalAlignment="Left" Margin="54,369,0,0" VerticalAlignment="Top" Width="64" Height="33"/>
+        <Label Content="129 руб" FontSize="18" HorizontalAlignment="Left" Margin="260,176,0,0" VerticalAlignment="Top" Width="75" Height="33"/>
+        <Label Name ="totalPrice" FontSize="24" Content="0" HorizontalAlignment="Left" Margin="524,353,0,0" VerticalAlignment="Top" Height="45" Width="90"/>
         <ListView Name ="listDesert" HorizontalAlignment="Left" Height="290" Margin="427,60,0,0" VerticalAlignment="Top" Width="273">
             <ListView.View>
                 <GridView>

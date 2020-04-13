@@ -4,6 +4,7 @@ namespace McDonalds
 {
     public static class MyItem
     {
+        public static int TotalPrice = 0;
         public static List<Item> list = new List<Item>();
         public enum Items
         {
@@ -12,14 +13,20 @@ namespace McDonalds
         public static void Add(string name, int amount, int price)
         {
             list.Add(new Item { Name = name, Amount = amount, Price = price });
+            TotalPrice += amount * price;
         }
         public static void Delete(int index)
         {
+            TotalPrice -= list[index].Price;
             list.RemoveAt(index);
         }
         public static void Edit(int index, int amount)
         {
+            var tmp = list[index].Price / list[index].Amount;
+            TotalPrice -= list[index].Price;
             list[index].Amount = amount;
+            list[index].Price = list[index].Amount * tmp;
+            TotalPrice += list[index].Price;
         }
     }
     public class Item

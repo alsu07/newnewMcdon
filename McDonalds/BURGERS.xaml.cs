@@ -18,6 +18,7 @@ namespace McDonalds
             listBurgers.Items.Clear();
             foreach (Item item in MyItem.list)
                 listBurgers.Items.Add(item);
+            totalPrice.Content = MyItem.TotalPrice.ToString();
         }
         private void backBurger_mouseDown(object sender, RoutedEventArgs e)
         {

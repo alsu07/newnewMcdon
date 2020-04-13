@@ -15,6 +15,7 @@
         <Label Content="Чикенбургер" FontSize="22" HorizontalAlignment="Left" Margin="203,17,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
         <Label Content="Чизбургер" FontSize="22" HorizontalAlignment="Left" Margin="25,222,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
         <Label Content="Чикен Роял" FontSize="22" HorizontalAlignment="Left" Margin="203,222,0,0" VerticalAlignment="Top" Width="150" Height="48"/>
+        <Label Name ="totalPrice" FontSize="24" Content="0" HorizontalAlignment="Left" Margin="513,367,0,0" VerticalAlignment="Top" Height="45" Width="90"/>
         <ListView Name="listBurgers" HorizontalAlignment="Left" Height="297" Margin="400,70,0,0" VerticalAlignment="Top" Width="291">
 
             <ListView.View>

@@ -9,12 +9,14 @@ namespace McDonalds
     public partial class changeAmount : Window
     {
         public int count;
-        public int flag, index;
+        public int flag { get; set; }
+        public int index { get; set; }
         public MyItem.Items tmp;
         public changeAmount(int _index, int _flag)
         {
             flag = _flag;
             index = _index;
+            InitializeComponent();
         }
         public changeAmount(MyItem.Items items)
         {

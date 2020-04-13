@@ -29,6 +29,7 @@ namespace McDonalds
             listDrink.Items.Clear();
             foreach (Item item in MyItem.list)
                 listDrink.Items.Add(item);
+            totalPrice.Content = MyItem.TotalPrice.ToString();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
